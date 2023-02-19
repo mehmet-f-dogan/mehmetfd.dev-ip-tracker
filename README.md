@@ -11,7 +11,8 @@ This Go program handles HTTP requests and performs an IP geolocation lookup on t
 
 - Clone this repository to your local machine.
 - Open a terminal and navigate to the cloned repository directory.
-- Run the program using the `go run main.go [PORT]`
+- To start the server, run the following command in the project directory:<br>`go run main.go`
+- The server will start on port 8080 by default. To specify a different port, set the PORT environment variable: <br> `PORT=8888 go run main.go`
 - Send HTTP requests to the program using any client, e.g. curl.
 - The client should set the X-Real-IP and X-Service-Name headers in the request.
 - Check the status.log file for the appended geolocation data.
