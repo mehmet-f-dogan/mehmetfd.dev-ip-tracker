@@ -11,10 +11,15 @@ import (
 
 var lastSeen = make(map[string]time.Time)
 
+
 func main() {
-	port := os.Args[3]
-    http.HandleFunc("/", handleRequest)
-    http.ListenAndServe(":" + port, nil)
+    port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	http.HandleFunc("/", handleRequest)
+	http.ListenAndServe(":"+port, nil)
 }
 
 func handleRequest(w http.ResponseWriter, r *http.Request) {
